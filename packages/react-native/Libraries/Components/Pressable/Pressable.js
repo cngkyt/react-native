@@ -147,6 +147,7 @@ type Props = $ReadOnly<{|
    * Called when a single tap gesture is detected.
    */
   onPress?: ?(event: PressEvent) => mixed,
+  onFocus?: ?(event: FocusEvent) => mixed,
 
   /**
    * Called when a touch is engaged before `onPress`.
@@ -226,6 +227,7 @@ function Pressable(props: Props, forwardedRef): React.Node {
     onHoverOut,
     onLongPress,
     onPress,
+    onFocus,
     onPressIn,
     onPressOut,
     pressRetentionOffset,
@@ -293,6 +295,7 @@ function Pressable(props: Props, forwardedRef): React.Node {
       onHoverOut,
       onLongPress,
       onPress,
+      onFocus,
       onPressIn(event: PressEvent): void {
         if (android_rippleConfig != null) {
           android_rippleConfig.onPressIn(event);
@@ -326,6 +329,7 @@ function Pressable(props: Props, forwardedRef): React.Node {
       onHoverOut,
       onLongPress,
       onPress,
+      onFocus,
       onPressIn,
       onPressOut,
       pressRetentionOffset,
